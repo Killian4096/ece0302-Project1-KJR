@@ -49,6 +49,9 @@ private:
   //Function to determine if function is valid given N
   bool checkValid(intmax_t n) const;
 
+  //Function to update valid given index
+  void updateValid(intmax_t index);
+
   //Function to get index valud
   bool get(intmax_t index) const;
 

@@ -1,4 +1,5 @@
 #include "bitset.hpp"
+#include <string>
 
 Bitset::Bitset(){
     unsigned char d_length = 8;
@@ -59,36 +60,48 @@ bool Bitset::good() const{
 }
 
 void Bitset::set(intmax_t index){
-    valid = checkValid(index);
-    *(bitString+index) = 1;
+    updateValid(index);
+    if(checkValid(index)){
+        *(bitString+index) = 1;
+    }
 }
 
 void Bitset::reset(intmax_t index){
-    valid = checkValid(index);
-    *(bitString+index) = 0;
+    updateValid(index);
+    if(checkValid(index)){
+        *(bitString+index) = 0;
+    }
 }
 
 void Bitset::toggle(intmax_t index){
-    valid = checkValid(index);
-    *(bitString+index) = not(*(bitString+index));
+    updateValid(index);
+    if(checkValid(index)){
+        *(bitString+index) = not(*(bitString+index));
+    }
 }
 
 bool Bitset::test(intmax_t index){
-    valid = checkValid(index);
+    updateValid(index);
     return get(index) && checkValid(index);
 }
 
 std::string Bitset::asString() const{
-    char buffer[size()];
-    for(intmax_t i=0;i<size();i--){
-        buffer[size()-1-i] = get(i);
+    char *buffer = new char[size()];
+    for(intmax_t i=0;i<size();i++){
+        *(buffer + size()-1-i) = get(i) + '0';
     }
     std::string returnBuffer = buffer;
     return returnBuffer;
 }
 
+void Bitset::updateValid(intmax_t index){
+    if(!(checkValid(index))){
+        valid = false;
+    }
+}
+
 bool Bitset::checkValid(intmax_t index) const{
-    if(index>0 && index<size()){
+    if(index>-1 && index<size()){
         return true;
     }
     return false;
