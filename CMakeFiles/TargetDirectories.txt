@@ -1,0 +1,5 @@
+/home/killian/ece0302-KR/ece0302-Project1-KJR/CMakeFiles/rebuild_cache.dir
+/home/killian/ece0302-KR/ece0302-Project1-KJR/CMakeFiles/edit_cache.dir
+/home/killian/ece0302-KR/ece0302-Project1-KJR/CMakeFiles/test.dir
+/home/killian/ece0302-KR/ece0302-Project1-KJR/CMakeFiles/submission.dir
+/home/killian/ece0302-KR/ece0302-Project1-KJR/CMakeFiles/bitset-tests.dir
