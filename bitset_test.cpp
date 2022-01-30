@@ -1,3 +1,9 @@
+//------------------------------------------------------------
+//
+// GITHUB: https://github.com/Killian4096/ece0302-Project1-KJR
+//
+//------------------------------------------------------------
+
 #define CATCH_CONFIG_MAIN
 #define CATCH_CONFIG_COLOUR_NONE
 #include "catch.hpp"
